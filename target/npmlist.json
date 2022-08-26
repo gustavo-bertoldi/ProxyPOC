@@ -1,0 +1,1 @@
+{"version":"1.0.0","name":"proxy","dependencies":{"dotenv":{"version":"16.0.1"},"express":{"version":"4.18.1"},"http-proxy-middleware":{"version":"2.0.6"},"morgan":{"version":"1.10.0"},"node-fetch":{"version":"3.2.10"}}}
