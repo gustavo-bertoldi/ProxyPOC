@@ -6,6 +6,7 @@
   "author": "Gustavo GIUNCO BERTOLDI",
   "license": "MIT",
   "dependencies": {
+    "amadeus": "^7.0.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "http-proxy-middleware": "^2.0.6",

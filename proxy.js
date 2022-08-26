@@ -1,6 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
-import { createProxyMiddleware, requestInterceptor } from 'http-proxy-middleware'
+import { createProxyMiddleware } from 'http-proxy-middleware'
 import fetch from 'node-fetch'
 import dotenv from 'dotenv';
 
@@ -31,7 +31,6 @@ async function amadeusToken() {
   };
   let response = await fetch("https://test.api.amadeus.com/v1/security/oauth2/token", args);
   let auth = await response.json();
-  console.log(auth);
   return auth.access_token;
 }
 
@@ -43,9 +42,6 @@ app.use('/amadeus-apis/airport-city-search', createProxyMiddleware({
   },
   headers: {
     Authorization: `Bearer ${await amadeusToken()}`
-  },
-  onProxyReq: (proxyReq, req, res) => {
-    proxyReq.
   }
 }));
 
