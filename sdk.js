@@ -6,13 +6,12 @@ const app = express();
 const PORT = 3000;
 const HOST = 'localhost';
 
-
 app.get('/info', (req, res) => {
   res.send("This is a proxy service");
 });
 
 app.use('/amadeus-apis/airport-city-search', createProxyMiddleware({
-  target: 'localhost:8080/airport-city-search',
+  target: 'http://localhost:8080/airport-city-search',
   changeOrigin: true,
   pathRewrite: {
     [`^/amadeus-apis/airport-city-search`]: '',
